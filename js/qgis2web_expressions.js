@@ -754,3 +754,17 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_Limiteprovincial_2rule0_eval_expression(context) {
+    // "NOMB_PRO"  IN ('OTUZCO', 'SANCHEZ CARRION', 'SANTIAGO DE CHUCO', 'JULCAN')
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return "'OTUZCO', 'SANCHEZ CARRION', 'SANTIAGO DE CHUCO', 'JULCAN'".indexOf(feature.properties['NOMB_PRO'] ) > -1 ;
+    } else {
+        return "'OTUZCO', 'SANCHEZ CARRION', 'SANTIAGO DE CHUCO', 'JULCAN'".indexOf(feature['NOMB_PRO'] ) > -1 ;
+    }
+}
